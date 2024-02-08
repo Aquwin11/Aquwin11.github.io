@@ -1,0 +1,706 @@
+/* General body styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px; 
+    font-family: Arial, sans-serif;
+    background-color: #F9F7F7;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    background: #2D3250;
+    color: #F6B17A;
+    padding: 20px 0;
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #112D4E;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar-brand {
+    color: #DBE2EF; /* Sets the text color */
+    font-size: 1.5em; /* Sets the size of the text */
+    font-weight: bold; /* Makes the text bold */
+    text-decoration: none; /* Removes the underline from the link */
+    padding: 0 15px; /* Adds padding to the left and right of the text */
+    display: inline-block; /* Allows the use of padding and centers vertically */
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change on hover */
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    color: #F9F7F7; /* Lightens the text color on hover/focus for visual feedback */
+    text-decoration: none; /* Ensures the underline does not reappear on hover/focus */
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    color: #F9F7F7;
+    font-size: 24px;
+}
+/* Hover effect for nav items */
+.nav-item a:hover {
+    background-color: #3F72AF; /* Darkens the background on hover */
+    color: #DBE2EF; /* Ensures the text color remains white */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for the background color */
+    border-radius: 8px; /* Adds curved edges with a radius of 8px */
+}
+
+/* Active (or clicked) state simulation for nav items */
+.nav-item a:active {
+    transform: scale(0.95); /* Slightly scales down the link */
+    transition: transform 0.2s ease; /* Smooth transition for the transform */
+}
+
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none; /* Remove this line */
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        background-color: #112D4E;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+    .navbar-brand{
+        font-size: 17px;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+}
+
+
+
+/*About*/
+#about
+{
+    color: #3F72AF;
+    padding-top: 25px;
+}
+#about .container >h2
+{
+    font-weight: 700;
+}
+#about .container >p
+{
+    font-weight: 500;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.3;
+}
+
+.contact-social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info {
+    display: flex; /* Align contact-info items horizontally */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 30px; /* Add some space between the items */
+}
+
+.contact-info p {
+    margin: 0; /* Remove default margin */
+    display: flex;
+    align-items: center; /* Center the text and icons vertically */
+}
+
+.contact-info i {
+    margin-right: 5px; /* Add some space between icon and text */
+    font-size: 25px;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px; /* Add space above social media links */
+}
+
+.social-media-links a {
+    font-size: 34px; /* Adjust as needed */
+    margin: 0 30px; /* Spacing between icons */
+    color: #3F72AF;
+}
+
+.social-media-links .bi-linkedin:hover {
+    color: #0055ff; /* Example hover color */
+}
+.social-media-links .bi-youtube:hover {
+    color: #b90b0b; /* Example hover color */
+}
+.social-media-links .bi-github:hover {
+    color: #9d00ff; /* Example hover color */
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column; /* Stack contact-info items vertically on smaller screens */
+    }
+
+    .social-media-links a {
+        font-size: 30px; /* Smaller icons for smaller screens */
+    }
+    .contact-info i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media-links {
+        flex-direction: row; /* Stack icons vertically on very small screens */
+        gap: 10px; /* Adjust gap for vertical layout */
+    }
+}
+
+/* Section styles */
+section {
+    margin: 20px 0;
+}
+
+/* Skills list */
+#skills
+{
+    background-color: #3F72AF;
+    color: #112D4E;
+}
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+
+    
+}
+
+#skills li {
+    display: inline-block;
+    margin-right: 10px;
+    background: #f2f2f2;
+    padding: 5px 10px;
+    margin-top:25px;
+    border-radius: 5%;
+    border: 2px solid #ffffff;
+
+}
+.hidden
+{
+    opacity: 0;
+    transition: 0.75s ease-in-out;
+    transform: translateX(-100%);
+    filter: blur(5px);
+    
+}
+#skills ul :nth-child(2)
+{
+    transition-delay: 100ms;
+}
+#skills ul :nth-child(3)
+{
+    transition-delay: 200ms;
+}
+#skills ul :nth-child(4)
+{
+    transition-delay: 250ms;
+}
+#skills ul :nth-child(5)
+{
+    transition-delay: 300ms;
+}
+
+#skills ul :nth-child(6)
+{
+    transition-delay: 350ms;
+}
+#skills ul :nth-child(7)
+{
+    transition-delay: 400ms;
+}
+
+#skills ul :nth-child(8)
+{
+    transition-delay: 450ms;
+}
+#skills ul :nth-child(9)
+{
+    transition-delay: 500ms;
+}
+#skills ul :nth-child(10)
+{
+    transition-delay: 550ms;
+}
+#skills ul :nth-child(11)
+{
+    transition-delay: 100ms;
+}
+#skills ul :nth-child(12)
+{
+    transition-delay: 200ms;
+}
+@media(prefers-reduced-motion)
+{
+    .hidden
+    {
+        transition: none;
+    }
+}
+.show
+{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0%);
+}
+
+.fh5co-heading {
+    margin-bottom: 30px;
+   
+}
+.fh5co-heading >h2{
+    color: #112D4E;
+
+   
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    color: #112D4E;
+
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+}
+
+.timeline > li {
+    position: relative;
+    min-height: 200px;
+    margin-bottom: 50px;
+    
+}
+#firstEducation
+{
+    margin-top: -130px;
+}
+.timeline-heading {
+    width: 100%; /* Ensure full width to center text properly */
+    margin: 20px 20px; /* Increase spacing above and below the heading */
+    clear: both; /* Ensures that the heading does not float next to timeline items */
+    color: #F9F7F7;
+}
+
+.timeline-heading div {
+    display: inline-block; /* Center the heading text */
+    padding: 0 20px; /* Optional: Add padding around the heading text for better spacing */
+    position: relative; /* Needed if you're going to use a background to overlap the timeline's line */
+   
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background-color: #3F72AF;
+    z-index: 0; /* Ensure the line is behind the headings */
+}
+
+.timeline .timeline-panel {
+    position: relative;
+    width: 46%;
+    padding: 20px;
+    background-color: #112D4E;
+    border: 1px solid #F9F7F7;
+    border-radius: 2px;
+}
+
+.timeline .timeline-panel:before {
+    content: '';
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #F9F7F7;
+    border-right: 0 solid #F9F7F7;
+    border-bottom: 15px solid transparent;
+}
+
+.timeline .timeline-badge {
+    color: #DBE2EF;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -25px;
+    background-color: #3F72AF;
+    z-index: 100;
+    border-radius: 50%;
+    border: 2px solid #DBE2EF;
+}
+.timeline-title {
+    margin-top: 0;
+    color: inherit;
+}
+
+.timeline-body > p, .timeline-body > ul {
+    margin-bottom: 0;
+    color: #F9F7F7;
+    text-justify: inter-word;
+
+}
+.show{
+    opacity: 1;
+}
+.timeline > li > .timeline-panel {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0; /* Start with the panel hidden */
+    transform: translate3d(0, 20px, 0); /* Start slightly translated down */
+}
+.timeline-inverted > .timeline-panel {
+    float: right;
+}
+.timeline-heading .Subheading
+{
+    color: #112D4E;
+}
+.timeline-heading + .animate-box {
+    margin-top: 20px; /* Adjust as needed */
+}
+.timeline-inverted > .timeline-panel:before {
+    right: -15px; /* Position the arrow on the right side */
+    left: auto; /* Reset left positioning */
+    border-left: 15px solid transparent; /* Hide left arrow */
+    border-right: 15px solid #ffffff; /* Show right arrow */
+}
+
+.animate-box {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+    transition: all 0.5s ease-out;
+}
+
+.animate-box.show {
+    opacity: 1;
+    transform: none; /* Resets to the original position */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+#projects
+{
+    margin-top: 80px;
+    background-color: #3F72AF;
+    box-shadow: 0 4px 8px #112d4e85;
+}
+/* Project styles */
+#projects .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #112D4E;
+    
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 20px; /* Space between items */
+}
+
+.project {
+    background: #F9F7F7;
+    border: 1px solid #DBE2EF;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px #112D4E;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents overflow */
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out;
+    filter: blur(5px);
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion) {
+    .project {
+        opacity: 1;
+        transition: none;
+    }
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+}
+.project-tech span {
+    background-color: #DBE2EF; /* Tech box background color */
+    color: #3F72AF; /* Tech box text color */
+    border-radius: 15px; /* Rounded edges */
+    padding: 5px 10px; /* Padding inside the tech boxes */
+    margin: 0 5px 5px 0; /* Margin to create space around tech boxes */
+    display: inline-block; /* Display as inline block for alignment */
+    font-size: 12px; /* Adjust font size as necessary */
+}
+.project-tech .special
+{
+    color: #112D4E
+}
+.project img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover; /* Ensures images fit nicely */
+}
+
+.project h3 {
+    margin: 10px 0 5px;
+}
+
+.project-tech {
+    font-style: italic;
+    color: #DBE2EF;
+    margin-bottom: 10px; /* Adds space before the description */
+    word-wrap: break-word; /* Ensures long words do not overflow */
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.project p {
+    font-size: 13px;
+    margin: 0;
+    flex-grow: 1; /* Allows the paragraph to fill available space, pushing down any elements below it */
+    overflow: hidden; /* Hides overflow */
+    text-overflow: ellipsis; /* Adds an ellipsis to text that overflows */
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/*Contant*/
+
+#contact-me .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #112D4E;
+}
+
+#contact-me h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    border: 1px solid #3F72AF;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3F72AF;
+    color: #F9F7F7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #112D4E;
+}
+/* Footer styles */
+footer {
+    background: #112D4E;
+    color: #F9F7F7;
+    text-align: center;
+    padding: 10px 0;
+}
+@media (max-width: 768px) {
+    #about .container >p
+    {
+        font-size: 15px;
+    }
+
+    .timeline:before {
+        left: 20px;
+    }
+    .timeline > li {
+        margin-bottom: 30px;
+    }
+    .timeline .timeline-panel {
+        width: calc(100% - 60px); /* Take full width minus margin for the line */
+        margin-left: 60px;
+    }
+    .timeline .timeline-panel:before {
+        top: -20px;
+        left: -15px;
+        border-left-width: 15px;
+        border-right-width: 0;
+        border-top: 15px solid transparent;
+        border-left: 15px solid #F9F7F7;
+        border-bottom: 15px solid transparent;
+    }
+    .timeline .timeline-badge {
+        top: 0;
+        left: 2%;
+    }
+
+    .timeline-inverted > .timeline-panel:before {
+        left: -15px; /* Adjust the arrow for inverted items */
+        border-left-width: 15px;
+        border-right-width: 0;
+        border-left-color: #F9F7F7;
+    }
+    .timeline-unverted {
+        margin-left: -42px;
+    }
+    .timeline-unverted .timeline-badge {
+        margin-left: 24px;
+    }
+    #projects :nth-child(2)
+    {
+        transition-delay: 0ms;
+    }
+    #projects :nth-child(3)
+    {
+        transition-delay: 0ms;
+    }
+    #projects :nth-child(4)
+    {
+        transition-delay: 0ms;
+    }
+    #projects :nth-child(5)
+    {
+        transition-delay: 0ms;
+    }
+}
+
+/* Additional styles for very small devices (optional) */
+@media (max-width: 480px) {
+    .navbar-brand{
+        font-size: 15px;
+    }
+    .timeline .timeline-badge {
+        left: 10px;
+    }
+    .timeline .timeline-panel {
+        margin-left: 40px;
+    }
+    .timeline-unverted {
+        margin-left: -21px;
+    }
+    .timeline-unverted .timeline-badge {
+        margin-left: 10.5px;
+    }
+    .timeline-heading
+    {
+        font-size: 15px;
+    }
+    .timeline-body > p{
+        font-size: 12px;
+    
+    }
+}

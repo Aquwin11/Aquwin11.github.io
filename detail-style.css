@@ -1,0 +1,331 @@
+/* General body styles */
+body, html {
+    margin: 0;
+    padding-top: 25px;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #3F72AF;
+    
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F9F7F7;
+    box-shadow: 0 8px 16px #112d4e;
+}
+
+/* Header styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #112D4E;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar-brand {
+    color: #DBE2EF; /* Sets the text color */
+    font-size: 1.5em; /* Sets the size of the text */
+    font-weight: bold; /* Makes the text bold */
+    text-decoration: none; /* Removes the underline from the link */
+    padding: 0 15px; /* Adds padding to the left and right of the text */
+    display: inline-block; /* Allows the use of padding and centers vertically */
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change on hover */
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    color: #F9F7F7; /* Lightens the text color on hover/focus for visual feedback */
+    text-decoration: none; /* Ensures the underline does not reappear on hover/focus */
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    color: #F9F7F7;
+    font-size: 24px;
+}
+/* Hover effect for nav items */
+.nav-item a:hover {
+    background-color: #3F72AF; /* Darkens the background on hover */
+    color: #DBE2EF; /* Ensures the text color remains white */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for the background color */
+    border-radius: 8px; /* Adds curved edges with a radius of 8px */
+}
+
+/* Active (or clicked) state simulation for nav items */
+.nav-item a:active {
+    transform: scale(0.95); /* Slightly scales down the link */
+    transition: transform 0.2s ease; /* Smooth transition for the transform */
+}
+
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none; /* Remove this line */
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        background-color: #112D4E;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+    .navbar-brand{
+        font-size: 17px;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+}
+
+
+
+/* Base styling for the project detail container */
+#project-detail-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #DBE2EF;
+    box-shadow: 0 2px 4px #112D4E;
+    border-radius: 8px;
+    color:#112D4E;
+    font-weight: 400;
+}
+
+#project-detail-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px #112D4E;
+    
+}
+
+/* Project title overlay */
+.project-title-overlay {
+    color: #112D4E;
+    width: auto;
+    border-radius: 8px;
+    z-index: 10;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 600;
+    
+    /* background-color: rgba(0, 0, 0, 0.5); Uncommented for better readability */
+}
+
+/* Tech stack and links */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.project-tech span {
+    background-color: #3F72AF;
+    color: #DBE2EF;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s;
+}
+
+/* Specific styles for images based on their orientation and type */
+.img-landscape, .img-portrait, .img-gif {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.img-landscape {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.img-portrait {
+    max-width: 300px;
+    object-fit: contain;
+}
+
+.img-phone {
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.project-link-icon
+{
+    display: flex;
+    justify-content: center; /* Centers horizontally in the container */
+    align-items: center; /* Centers vertically in the container */
+    height: 100%; 
+    font-size: 34px; /* Icon size */
+    color: #3F72AF; /* Icon color */
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+.project-link-icon i:hover, .project-link-icon span:hover {
+    color: #ab00ef; /* Change icon color on hover */
+}
+
+#project-detail-container p {
+    font-size: 17px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+#project-detail-container h4 {
+    font-size: 25px;
+}
+/* collapsible*/
+
+.collapsible
+{
+    margin-bottom: 15px;
+}
+.collapsible-content {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.collapsible .collapsible-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #112D4E;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 20px;
+}
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.collapsible .collapsible-header:hover {
+    background-color: #112D4E;
+    color:#DBE2EF;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #project-detail-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .project-tech span, .project-link {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        padding: 3px 7px;
+        font-size: 12px;
+    }
+
+    #project-detail-container p {
+        font-size: 14px;
+    }
+
+    .project-title-overlay {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    .project-link-icon i {
+        font-size: 30px; /* Even smaller icon size for very small screens */
+    }
+}
+
+@media (max-width: 670px) {
+    .project-title-overlay {
+        font-size: 1.45em; /* Adjust font size for very small screens */
+        top: 30%; /* Adjust the vertical position to ensure it's visible */
+    }
+}
+
+@media (max-width: 400px) {
+    .project-title-overlay {
+        font-size: 1.25em; /* Adjust font size for very small screens */
+        top: 25%; /* Adjust the vertical position to ensure it's visible */
+    }
+
+    .project-link-icon i {
+        font-size: 24px; /* Even smaller icon size for very small screens */
+    }
+}
+@media (max-width: 480px) {
+    .navbar-brand{
+        font-size: 15px;
+    }
+}

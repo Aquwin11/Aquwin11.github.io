@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dynamic Navbar</title>
+
+            <link rel="stylesheet" href="detail-style.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Aquwin Thomas Panjikaran</a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="index.html#about">About</a></li>
+            <li class="nav-item"><a href="index.html#Timeline">Resume</a></li>
+            <li class="nav-item"><a href="index.html#projects">Projects</a></li>
+            <li class="nav-item"><a href="index.html#contact-me">Contact</a></li>
+        </ul>
+        <button class="navbar-toggler">
+            <span class="toggler-icon">☰</span>
+        </button>
+    </nav>
+    <div id="project-detail-container">
+        <!-- Project details will be loaded here -->
+    </div>
+    
+	<script src="script.js"></script>
+    <script>
+const projects = {
+    project1: {
+        title: "FOUR PEBBLES",
+        img: "Images/ic_newicon_foreground.png",
+        tech: ["Kotlin", "Android Studio"],
+        content: [
+            // Example of a heading
+            /*{
+                type: "link",
+                value: "bi-github",
+                url: "https://www.google.com/",
+                linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
+            },*/
+            {
+                type: "heading",
+                value: "Design & Features"
+            },
+            {
+                type: "text",
+                value: "The game is played on a 6X6 board where the player's objective is to make a sequence of four characters of X or O horizontally, vertically, and diagonally. The major change comes in the switch button where the player swaps their symbols with their opponent which can change the flow of the game entirely. On swapping the player lose their current move and their opponent gets to play again."
+            },
+            /*{
+                type: "image",
+                value: "Images/MergedImages.png",
+                alt: "Computer  Screenshot",
+                orientation: "portrait" // New attribute for orientation
+            },*/
+            {
+                type: "collapsible",
+                value: "Screens",
+                content: [
+                    { type: "text", value: "The app has six screens that it transitions between. The settings screen gives the user control over their volume and also changes their username. The single player screen provides the player to play between two options.One the player can play against another player on the same device in the co-op mode and another where the player can play against a bot. In the Multiplayer screen, the two buttons are present create, and join were planned to open a dialog box where the player can enter the code to either create or join an existing room. The Rules section displays the rules and tips and tricks to help win the game. The gameplay screen is similar throughout the different modes." },
+                    { type: "image", value: "Images/MergedImages.jpg", alt: "Example" },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Video"
+            },
+            {
+            type: "youtube",
+            value: "PoyXHQvtQa4?si=y9vwxscPy2Q3wGR0" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+
+            /*{
+                type: "gif",
+                value: "Images/dayNightGIF.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },*/
+            {
+                type: "text",
+                value: "Final thoughts on the project."
+            }
+        ]
+    },
+    // More projects...
+};
+
+
+// Function to parse URL parameters
+function getProjectIdFromURL() {
+    const queryParams = new URLSearchParams(window.location.search);
+    return queryParams.get('id');
+}
+// Call the function to load details when the page loads
+document.addEventListener('DOMContentLoaded', loadProjectDetails);
+
+function loadProjectDetails() {
+    const projectId = getProjectIdFromURL();
+    const project = projects[projectId];
+
+    if (project) {
+        const container = document.getElementById('project-detail-container');
+        const techHTML = project.tech ? project.tech.map(tech => `<span class="project-tech-item">${tech}</span>`).join('') : '';
+        let contentHTML = '';
+
+        project.content.forEach(item => {
+            switch(item.type) {
+                case "text":
+                    contentHTML += `<p>${item.value}</p>`;
+                    break;
+                case "image":
+                case "gif":
+                    const orientationClass = item.orientation ? `img-${item.orientation}` : '';
+                    contentHTML += `<img src="${item.value}" alt="${item.alt}" class="${item.type} ${orientationClass}">`;
+                    break;
+                case "heading":
+                    contentHTML += `<h4>${item.value}</h4>`;
+                    break;
+                case "link":
+                    if (item.linkType === "text") {
+                        contentHTML += `<a href="${item.url}" class="project-link">${item.value}</a>`;
+                    } else if (item.linkType === "icon") {
+                        contentHTML += `<a href="${item.url}" class="project-link-icon"><i class="bi ${item.value}"></i></a>`;
+                    } else if (item.linkType === "image") {
+                        contentHTML += `<a href="${item.url}" class="project-link-image"><img src="${item.value}" alt="Link"></a>`;
+                    }
+                    break;
+                case "youtube":
+                    contentHTML += `
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/${item.value}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    `;
+                    break;
+
+                case "collapsible":
+                    let collapsibleContentHTML = item.content.map(subItem => {
+                        switch(subItem.type) {
+                            case "text": return `<p>${subItem.value}</p>`;
+                            case "image": return `<img src="${subItem.value}" alt="${subItem.alt}" class="img-${subItem.orientation || 'default'}">`;
+                            // Add cases for gif, video, etc.
+                            default: return '';
+                        }
+                    }).join('');
+
+                    contentHTML += `
+                        <div class="collapsible">
+                            <div class="collapsible-header">${item.value}</div>
+                            <div class="collapsible-content">${collapsibleContentHTML}</div>
+                        </div>
+                    `;
+                    break;
+            }
+        });
+
+        // Combine the image container with the rest of the content
+        const projectImageHTML = `
+            <div class="project-img-container">
+                <img src="${project.img}" alt="${project.title}" class="project-main-image">
+                <div class="project-title-overlay">${project.title}</div>
+            </div>
+        `;
+
+        container.innerHTML = projectImageHTML + `<div class="project-tech">${techHTML}</div>` + contentHTML;
+
+        // Add event listeners to collapsible headers after content is loaded
+        document.querySelectorAll('.collapsible-header').forEach(header => {
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        });
+    } else {
+        container.innerText = 'Project details not found.';
+    }
+}
+document.querySelectorAll('.collapsible-header').forEach(header => {
+    header.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Collapse
+            this.classList.remove('active');
+        } else {
+            // Expand
+            content.style.maxHeight = content.scrollHeight + "px";
+            this.classList.add('active');
+        }
+    });
+});
+
+
+    </script>
+  </body>
+</html>  
