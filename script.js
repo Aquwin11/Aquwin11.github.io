@@ -102,3 +102,4 @@ projectElements.forEach(ele => observer.observe(ele));
 // Observe elements with the '.project' class
 const invertedElements = document.querySelectorAll('.animate-box');
 invertedElements.forEach(ele => observer.observe(ele));
+

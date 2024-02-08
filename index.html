@@ -118,7 +118,7 @@
                                         <span class="company">GGS Information Services (Oct 2021 - Apr 2022)</span>
                                     </div>
                                     <div class="timeline-body">
-                                        <p>Worked for HAL as a VR developer. The work mainly focused on simulating the maintenance of helicopters in VR.</p>
+                                        <p>Worked for HAL(Hindustan Aeronautics Limited) as a VR developer. The work mainly focused on simulating the maintenance of helicopters in VR.</p>
                                     </div>
                                 </div>
                             </li>
@@ -236,7 +236,14 @@
     </section>
     
     </section>
-
+    <div id="customAlert" class="custom-alert hidden">
+        <div class="custom-alert-content">
+            <h4 id="customAlertTitle">Alert Title</h4>
+            <p id="customAlertMessage">Alert message...</p>
+            <button onclick="hideCustomAlert()">Close</button>
+        </div>
+    </div>
+    
     <section id="contact-me">
         <div class="container">
             <h2>Contact Me</h2>
@@ -284,7 +291,10 @@
             console.log('Email:', email);
             console.log('Message:', message);
     
-            alert('Thank you for your message!');
+            //alert('Thank you for your message!');
+
+                customAlert("Aquwin says:", "Thank you for your message!");
+
             sendMail();
             // Reset the form after submission for demonstration purposes
             document.getElementById('contact-form').reset();
@@ -294,6 +304,19 @@
         let parms={from_name:document.getElementById("c_Name").value,email:document.getElementById("email").value,message:document.getElementById("message").value,}
         emailjs.send("service_390f8c5","template_m6n5grb",parms);
     }
+    function customAlert(title, message) {
+                    var titleElement = document.getElementById("customAlertTitle");
+                    var messageElement = document.getElementById("customAlertMessage");
+                    var alertBox = document.getElementById("customAlert");
+
+                    titleElement.innerHTML = title;
+                    messageElement.innerHTML = message;
+                    alertBox.classList.remove("hidden");
+                }
+
+                function hideCustomAlert() {
+                    document.getElementById("customAlert").classList.add("hidden");
+                }
     </script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">

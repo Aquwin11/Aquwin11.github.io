@@ -65,6 +65,39 @@ const projects = {
             },
             {
                 type: "heading",
+                value: "Gameplay Implementation"
+            },
+            {
+                type: "text",
+                value: "In the single-player gameplay activity of our app, we accommodate both Player VS Player and Player VS Bot modes on the same screen, with minor adjustments between the two for a tailored gaming experience. This functionality is achieved through the use of intents. Based on the game mode selected by the user in the single-player menu screen, an intent directs the user to the appropriate gameplay activity setup. The gameplay mechanics include a dynamic player array list to which the value of a clicked box is added whenever a player makes a move. This approach allows for an efficient tracking of players' positions and actions on the board. Furthermore, a switch button feature is incorporated, enabling players to swap their array lists with each other at the click of a button."
+            },
+            {
+                type: "collapsible",
+                value: "Bot",
+                content: [
+                    { type: "text", value: "The bot in the game operates through a decision tree, employing a sequential decision-making process to determine its actions. Initially, it checks for a possible winning move and executes it if available. If a winning move isn't viable and the opponent is positioned to win on their next turn, the bot evaluates the number of potential winning moves for the opponent. If the opponent has more than one winning move available, indicating that a simple block won't suffice, the bot opts to swap symbols with the opponent to disrupt their strategy. However, if the opponent's win can be prevented with a single block, the bot proceeds to block the opponent's winning move. Following this, the bot assesses the board for any strategic advantages, such as taking a central position or setting up a sequence that could lead to a future win. In the absence of strategic moves, it defaults to making a random move to maintain gameplay dynamics. This logical, hierarchical approach ensures the bot is not only reactive but also proactively seeks to optimize its chances of winning, balancing both offensive and defensive strategies within the game's context." },
+                    { type: "gif", value: "Images/Emulator-FivePebells2024-02-0822-38-31-ezgif.com-optimize.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Multiplayer"
+            },
+            {
+                type: "text",
+                value: "In the multiplayer activity of the game, the process begins when a user inputs a game code into the designated text field. Upon pressing the create button, the system first verifies whether a game room with the specified code already exists. If there is no existing room, it proceeds to create a new game room. Conversely, when a user opts to join an existing game by clicking the join button, the system checks the validity of the provided code against the game rooms registered in Firebase's real-time database. If the code corresponds to an existing room, the player is seamlessly added to that room. This entire multiplayer setup, including the creation and joining of game rooms, is meticulously managed through Firebase’s Realtime Database, offering a robust and efficient way to handle game state and player interactions in real time. The visual and interactive elements of the multiplayer gameplay activity are designed to be familiar, mirroring the single-player experience for consistency. Every action a player takes, such as clicking a box, triggers an update in the Realtime Database, which is immediately reflected on all participants' devices, ensuring that each player's moves are synchronized across the game."
+            },
+            {
+                type: "collapsible",
+                value: "CODE SNIPPET",
+                content: [
+                    { type: "image", value: "Images/four_database.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
                 value: "Video"
             },
             {
@@ -73,6 +106,7 @@ const projects = {
             },
 
             /*{
+                
                 type: "gif",
                 value: "Images/dayNightGIF.gif",
                 alt: "Animation Highlighting Challenges",
@@ -80,7 +114,13 @@ const projects = {
             },*/
             {
                 type: "text",
-                value: "Final thoughts on the project."
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/four-pebbels/",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
             }
         ]
     },
@@ -140,6 +180,7 @@ function loadProjectDetails() {
                         switch(subItem.type) {
                             case "text": return `<p>${subItem.value}</p>`;
                             case "image": return `<img src="${subItem.value}" alt="${subItem.alt}" class="img-${subItem.orientation || 'default'}">`;
+                            case "gif": return `<img src="${subItem.value}" alt="${subItem.alt}" class="${subItem.type} ${subItem.orientationClass|| 'default'}">`;
                             // Add cases for gif, video, etc.
                             default: return '';
                         }

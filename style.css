@@ -611,6 +611,54 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #112D4E;
 }
+/*Alert.*/
+.custom-alert.hidden {
+    display: none;
+}
+.custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Above other content */
+}
+.custom-alert-content {
+    background: #112D4E;
+    padding: 20px;
+    border-radius: 5px;
+    color: #F9F7F7;
+    flex-direction: column;
+    align-items: center;
+}
+.custom-alert-content button {
+    padding: 10px 20px; /* Adjust padding to increase button size */
+    font-size: 12px; /* Make the text inside the button larger */
+    border: none; /* Remove the default border */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #F9F7F7; /* Set a primary button color */
+    color: #112D4E; /* Set text color to white for contrast */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-alert-content button:hover {
+    background-color: #3F72AF; /* Darken button color on hover for feedback */
+    color:#DBE2EF;
+}
+
+.custom-alert-content button:focus {
+    outline: none; /* Remove outline on focus for aesthetics */
+    box-shadow: 0 0 0 2px #264872; /* Add a glow effect on focus */
+}
+
+
 /* Footer styles */
 footer {
     background: #112D4E;

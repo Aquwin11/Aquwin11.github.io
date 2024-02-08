@@ -1,6 +1,7 @@
 /* General body styles */
 body, html {
     margin: 0;
+    padding: 0;
     padding-top: 25px;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
@@ -29,7 +30,7 @@ header {
     align-items: center;
     background-color: #112D4E;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
     box-sizing: border-box;
     position: fixed;
     width: 100%;
@@ -40,7 +41,7 @@ header {
 
 .navbar-brand {
     color: #DBE2EF; /* Sets the text color */
-    font-size: 1.5em; /* Sets the size of the text */
+    font-size: 1.85em; /* Sets the size of the text */
     font-weight: bold; /* Makes the text bold */
     text-decoration: none; /* Removes the underline from the link */
     padding: 0 15px; /* Adds padding to the left and right of the text */
@@ -65,6 +66,7 @@ header {
     text-decoration: none;
     padding: 10px 15px;
     display: block;
+    font-size: 20px;
 }
 
 .navbar-toggler {
