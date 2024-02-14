@@ -41,7 +41,7 @@ header {
 
 .navbar-brand {
     color: #DBE2EF; /* Sets the text color */
-    font-size: 1.85em; /* Sets the size of the text */
+    font-size: 1.5em; /* Sets the size of the text */
     font-weight: bold; /* Makes the text bold */
     text-decoration: none; /* Removes the underline from the link */
     padding: 0 15px; /* Adds padding to the left and right of the text */
@@ -66,7 +66,7 @@ header {
     text-decoration: none;
     padding: 10px 15px;
     display: block;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .navbar-toggler {
@@ -238,6 +238,9 @@ header {
 }
 #project-detail-container h4 {
     font-size: 25px;
+}
+#project-detail-container .collapsible h4 {
+    font-size: 22px;
 }
 /* collapsible*/
 

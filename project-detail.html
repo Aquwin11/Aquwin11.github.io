@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Dynamic Navbar</title>
+            <title>Portfolio Projects</title>
 
             <link rel="stylesheet" href="detail-style.css">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -125,6 +125,427 @@ const projects = {
             }
         ]
     },
+    project2: {
+        title: "Leggy’s Logic",
+        img: "Images/Leggy.png",
+        tech: ["JAVA", "JBox2D"],
+        content: [
+            // Example of a heading
+            /*{
+                type: "link",
+                value: "bi-github",
+                url: "https://www.google.com/",
+                linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
+            },*/
+            {
+                type: "text",
+                value: "This game was developed as part of my computer games course for physics-based games module."
+            },
+            {
+                type: "heading",
+                value: "Introduction"
+            },
+            {
+                type: "text",
+                value: "Leggy's Logic is a puzzle platformer game that has been developed using JBox2D, which is a 2D physics engine. The game features a spider character named Leggy, and her movements are based on physics, providing a realistic experience for the player. One of the main features of the game is the character's automatic foot placement based on the terrain geometry, which enhances the player's experience of traversing through the game world. The other feature of the game is Leggy's ability to jump, shoot webs, and grapple. In this report, we will delve into the development process of these features."
+            },
+            {
+                type: "heading",
+                value: "Player Movement"
+            },
+            {
+                type: "text",
+                value: "The movement of the character is achieved by applying force to its main body. In a 'for' loop, the positions of the spider's legs are iterated to calculate the distance between the main body and each leg using the distance formula. If the calculated distance is greater than the maximum distance or less than the minimum distance, and if the leg is on the ground, then the leg moves towards the new leg position with the given speed. If the calculated distance is within the maximum and minimum distance limits or if the leg is not on the ground, the leg remains stationary by setting its linear velocity to zero. The new leg position objects are attached to the main body of the spider using a distance joint."
+            },
+            {
+                type: "collapsible",
+                value: "CODE SNIPPET",
+                content: [
+                    { type: "text", value: "Code for Spider’s Leg Movement." },
+                    { type: "image", value: "Images/spiderLegCode.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Grapple & Shooting"
+            },
+            {
+                type: "text",
+                value: "The Grapple mechanic is activated when the player presses the E key near a grapple point and the conditions for grappling are fulfilled. This action triggers a sound and sets up a distance joint between the spider and the grapple point, visually represented by a line akin to a string, signifying the connection. This mechanic allows players to swing and maneuver in the environment, adding a dynamic element to navigation. Shooting is another core mechanic, where aiming is controlled by the right mouse button and firing by the left. The game calculates the trajectory and velocity of projectiles based on the coordinates of the target and the spider, creating a new projectile instance each time the player shoots."
+            },
+            {
+                type: "heading",
+                value: "Joints"
+            },
+            {
+                type: "text",
+                value: "Joints in physics are the means of connecting two or more rigid bodies in a way that enables them to move together in a specific manner. As previously mentioned, we utilized a distance joint to simulate a grappling hook and even for the spider's new leg position. In the game, joints were also implemented by combining a distance joint and a revolute joint, both anchored around the main body. This combination forces the legs to push the body upward, visually representing that the legs are holding the main body up. The entire spider body was created using revolute joints to inverse kinematics. For some objects that don’t need any kind of rotation, wield joint was used."
+            },
+            {
+                type: "image",
+                value: "Images/spideDebug.png",
+                alt: "Computer  Screenshot",
+                orientation: "landscape" // New attribute for orientation
+            },
+            {
+                type: "heading",
+                value: "Collision Detection"
+            },
+            {
+                type: "text",
+                value: "In the game, collision filtering was utilized to determine which objects can collide with one another, making the objects more dynamic. The same class was used to create different objects with unique functionality. Contact collision occurs when two bodies come into contact with each other. The is Touching() method determines if the two bodies are in contact, and if so, the World Manifold object is used to obtain information about the collision. This method was utilized to determine if the legs were grounded. Contact listeners were also employed to detect and respond to collisions between bodies in the simulation, adding custom behaviours to the game or simulation when certain objects collide. The traps and interactable in the game utilized contact listeners to provide unique behaviour."
+            },
+            {
+                type: "collapsible",
+                value: "CODE SNIPPET",
+                content: [
+                    { type: "text", value: "Code for contact collision to check if grounded." },
+                    { type: "image", value: "Images/groundedCode.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Leggy's Logic Full Game video"
+            },
+            {
+            type: "youtube",
+            value: "K1KjsxNcw8Q?si=uXvpGA8by2WxQode" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+            {
+                type: "heading",
+                value: "Leggy's Logic with skeleton video"
+            },
+            {
+            type: "youtube",
+            value: "mnie5i5dTR8?si=DvvgkjClqGS6nX18" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+
+            /*{
+                
+                type: "gif",
+                value: "Images/dayNightGIF.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+                orientation: "landscape"
+            },*/
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/leggys-logic",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
+    project3: {
+        title: "The Calling",
+        img: "Images/calling.jpg",
+        tech: ["C#", "Unity"],
+        content: [
+            // Example of a heading
+            /*{
+                type: "link",
+                value: "bi-github",
+                url: "https://www.google.com/",
+                linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
+            },*/
+            {
+                type: "text",
+                value: "This game was developed as part of my course and its story is still in developement."
+            },
+            {
+                type: "heading",
+                value: "Combat"
+            },
+            {
+                type: "text",
+                value: "The player uses the gun throughout the game. The gun is not only used for combat but also to solve puzzles. The handgun doubles as a torch also, which can be used in hard-to-see places. The shooting is done by ray casting, if the ray hit an enemy the enemy takes damage. The gun also has a custom animation. The character control was built from the ground up, the gun sways left and right the player moves horizontally, and it lags behind when the player moves the mouse way too fast. All these effects were obtained by Lerping and Swaying the gun's pivot to the desired position. The gun has a run, idle, and walk animation which was done using an animator. The gun automatically reloads once the player magazine empties."
+            },
+            {
+                type: "heading",
+                value: "Zombies"
+            },
+            {
+                type: "text",
+                value: "In the previous build, the enemy would go into its alert state as soon as the player enters inside its range. This seemed unnatural, so I implemented line of sight. Where the enemy can see the player only if the player enters its vision cone. The challenge was not to put this code on the update function. Instead, it runs in a coroutine that calls itself continuously. Another change made was creating a parent class for the enemy (Abstract class) which can define common variables used between the different enemies like health vision radius."
+            },
+            {
+                type: "collapsible",
+                value: "Enemy State Machine",
+                content: [
+                    { type: "image", value: "Images/AI_state.png", alt: "Example", orientation: "landscape"},
+                    { type: "text", value: "The enemy has 7 states that it transitions between. In patrolling phase, the enemy walks, to a random waypoint specified by the developer. Once the enemy reaches one of these random waypoints it goes into an idle state, where it waits for a certain amount of time and then continues to patrol. The next stage is the chase state, which is active when the player enters the enemy's vision. The enemy Looks At the player and begins to run toward the player. The next phase is the attack phase. In this phase, the enemy can attack and deal damage to the player if they are close or in the attack range. The stun phase is where the enemy can be stunned by the player. This is not true every time, the enemy can be stunned after a certain period of time since its last stun. Once the enemy takes enough damage it dies, as a unique feature, the enemy can reanimate itself with full health. FigMovement." },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Weeping Angel"
+            },
+            {
+                
+                type: "gif",
+                value: "Images/enemy3.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },
+            {
+                type: "text",
+                value: "The second type of enemy was built more for a puzzle component than a combat scenario. The enemies were inspired by the weeping angels from Doctor Who. The statue moves when the player is not looking at it. This is done similarly to the first enemy, but the difference is if the player's camera is not rendering the enemy and the player is in the enemies’ range then it will start to follow the player. Once the enemy goes close to the player it deals an instant kill on the player."
+            },
+            {
+                type: "collapsible",
+                value: "CODE SNIPPET for FOV",
+                content: [
+                    { type: "image", value: "Images/enemy3FOV.png", alt: "Example", orientation: "landscape"},
+                    { type: "text", value: "The enemy has 8 states that it transitions between. In patrolling phase, the enemy walks, to a random waypoint specified by the developer. Once the enemy reaches one of these random waypoints it goes into an idle state, where it waits for a certain amount of time and then continues to patrol. The next stage is the chase state, which is active when the player enters the enemy's vision. The enemy Looks At the player and begins to run toward the player. The next phase is the attack phase. In this phase, the enemy can attack and deal damage to the player if they are close or in the attack range. The stun phase is where the enemy can be stunned by the player. This is not true every time, the enemy can be stunned after a certain period of time since its last stun. Once the enemy takes enough damage it dies, as a unique feature, the enemy can reanimate itself with full health. FigMovement." },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Puzzels"
+            },
+            {
+                type: "text",
+                value: "The main objective of the games is to get to the root of what is causing this supernatural phenomenon. The player can solve this problem by completing a series of puzzles and exploring the mansion. The player can solve these puzzles by interacting with the world. There are a series of checks that the player script does to see which puzzle or object the player is intending to interact with. The story of the game is revealed in the game world through different interactable objects like letters and notes."
+            },
+            {
+                type: "collapsible",
+                value: "Puzzel One",
+                content: [
+                    { type: "text", value: "For the first puzzle, the player must read a note in the current room. To read the note the player must get close to the letters and click “E”. On doing so a new UI opens with allows the player to read the description of the letter. The riddle hints at the player to make the room dark. If the player shoots the bulb the light goes off including an illusion of a cupboard." },
+                    { type: "gif", value: "Images/puzzleone.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Puzzel Two",
+                content: [
+                    { type: "text", value: "The second puzzle can be solved by again interacting with a letter that provides a hint and the player to rearrange a bunch of photos. This is accomplished by storing the mesh and the selected game object in a buffer and replacing them once the player selects another image the player wanted to swap the original image with. Same as the previous one the player is given hints on solving this through a letter. But if the player explored the previous floor carefully, he could see the second puzzle original puzzle." },
+                    { type: "gif", value: "Images/puzzle2.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Puzzel Three",
+                content: [
+                    { type: "text", value: "In this puzzle, the player has to set the time of different clocks based on the riddle given to the player. The problem is that the riddle is incomplete. The messing information is hidden in the statue in front of each clock. The player is given the ability to examine these game objects and even rotate to look for clues. Similar to the letters and GUI pops up which gives the player a description of the current object that is being examined. For each of these puzzles, the player is rewarded with a key from a closed box. These keys allow the player to progress with the story. There is a fourth partial puzzle, it is not a puzzle in a traditional term. This puzzle will have to deal with a new type of new that was not present in the demo build." },
+                    { type: "gif", value: "Images/puzzle3.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+            type: "youtube",
+            value: "LYy2emhPXxo?si=eM_0kxA3OEQabehl" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+
+            /*{
+                
+                type: "gif",
+                value: "Images/dayNightGIF.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+                orientation: "landscape"
+            },*/
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/leggys-logic",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
+    project4: {
+        title: "Rootopia",
+        img: "Images/rootopia.png",
+        tech: ["C#", "Unity","Game Jam"],
+        content: [
+            {
+                type: "text",
+                value: "Rootopia is a tower defence game, developed as part of the Global Game Jam 2023(theme-'Roots'), where I and 5 other participated in. My contribution was the development of various  the traps in the game."
+            },
+            {
+                type: "heading",
+                value: "Traps"
+            },
+            {
+                type: "text",
+                value: "In tower defence games, player abilities, and traps are critical components that contribute to the game's overall experience. Rootopia is a game that features four distinct traps, each with its own unique benefits. Each trap offers a different set of advantages, allowing players to customize their defence strategies and adapt to various gameplay situations."
+            },
+            {
+                type: "heading",
+                value: "Walls"
+            },
+            {
+                
+                type: "gif",
+                value: "Images/RootopiaWall.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },
+            {
+                type: "text",
+                value: "The wall is the most basic trap among the four available in Rootopia. It serves as a defensive barrier for the player and can also act as an obstacle for enemies, preventing them from reaching certain locations When the wall is instantiated in the game scene, it is initially offset by a certain value in the y-position. With the use of an animator component, the wall is animated in a way that it appears to rise from the ground."
+            },
+            {
+                type: "heading",
+                value: "Spikes"
+            },
+            {
+                
+                type: "gif",
+                value: "Images/RootopiaSpikes.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },
+            {
+                type: "text",
+                value: "The Spike Trap is a powerful trap that deals significant damage to enemies who step on it.The spike prefab consists of a collider and a rigid body, when the colliders are triggered the spikes raise up from the spike prefab and deal damage to which every enemy is standing on it.."
+            },
+            {
+                type: "heading",
+                value: "Acid Flower"
+            },
+            {
+                
+                type: "gif",
+                value: "Images/RootopiaFlowers.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },
+            {
+                type: "text",
+                value: "The Flower Trap in Rootopia is a unique trap that has two different effects on enemies. The Flower Trap slows down enemies and deals a small amount of damage over time. The Flower Trap's design is intended to provide players with a more strategic option for dealing with enemy waves. The trap is triggered when the enemy stays within the trap's collision. During this state, the traps access the enemy animator and Nav-Agent and set a low movement and animation speed. Using on OnCollisonEnd function it resets its movement and animation speed to the original value."
+            },
+            {
+                type: "heading",
+                value: "Turret Branch"
+            },
+            {
+                
+                type: "gif",
+                value: "Images/RootopiaBranches.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "potrait"
+            },
+            {
+                type: "text",
+                value: "The Turret Branch is a powerful range trap that deals damage to enemies within its range ,the Turret Branch has a light sight requirement. To implement the Turret Branch in Rootopia, a two-ray cast system is used to determine if the trap has a line of sight to the enemy. The two rays are cast from the Turret Branch's position towards the enemy, and if there is no obstacle between them, the trap will fire and deal damage to the enemy."
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+            type: "youtube",
+            value: "qowFf8QGtrw?si=56DvU_TQ6rEFa3qU" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/rootopia",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
+
+    project5: {
+        title: "Alien Shooter",
+        img: "Images/newAlien_Shooter.jpg",
+        tech: ["C#", "Unity2D"],
+        content: [
+            {
+                type: "text",
+                value: "Alien Shooter is an endless space shooter developed in Unity 2D, designed specifically for Android devices."
+            },
+            {
+                type: "heading",
+                value: "Design"
+            },
+            {
+                type: "text",
+                value: "This game challenges players to engage in non-stop action, navigating through the cosmos while battling a relentless alien force. The key design feature centers around energy management; players must keep their energy bar replenished to survive. The game encourages an aggressive playstyle, rewarding players for staying on the offensive. Each enemy vanquished not only boosts the player's score but also replenishes a portion of their energy bar, creating a dynamic balance between attack and defense."
+            },
+            {
+                type: "collapsible",
+                value: "Movement",
+                content: [
+                    { type: "text", value: "Use the left side of the screen to maneuver your ship across the 2D plane. This will help you dodge obstacles and enemy attacks." },
+                    { type: "image", value: "Images/movementHTP.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Combat and Defense",
+                content: [
+                    { type: "text", value: "The right side of the screen features two primary actions: Shoot and Activate Shield. Every shot fired consumes energy. As you fire continuously, the energy depletes and takes time to recharge. When the ship's energy is fully depleted, you'll need to wait for it to recharge fully before firing again." },
+                    { type: "image", value: "Images/comabtHTP.png", alt: "Example", orientation: "potrait"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Energy Management",
+                content: [
+                    { type: "text", value: "Restore energy faster by activating your shield. Blocking attacks or colliding with enemy ships while the shield is active regains energy. However, be cautious! Using the shield consumes energy at a rapid rate and prevents your ship from shooting." },
+                    { type: "image", value: "Images/energyHTP.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Enemies",
+                content: [
+                    { type: "text", value: " Speedster is a basic enemy type that charges towards your ship at high velocities. Quick reflexes and sharp maneuvers are essential to evade these relentless foes." },
+                    { type: "image", value: "Images/Speedster.png", alt: "Example", orientation: "landscape"},
+                    { type: "text", value: " he Artillery Sentinel is armed with a radar system. Upon detecting your ship in its vicinity, it immediately releases a deadly projectile." },
+                    { type: "image", value: "Images/Sentinel.png", alt: "Example", orientation: "landscape"},
+                    { type: "text", value: " Among the most challenging enemies, the Shielded Cruiser boasts a protective shield, making direct ramming tactics futile. " },
+                    { type: "image", value: "Images/Shielded.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+            type: "youtube",
+            value: "-GQvNdNhgwA?si=VZ3AZXr5YdxJ32yv" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/rootopia",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
     // More projects...
 };
 
@@ -179,6 +600,7 @@ function loadProjectDetails() {
                 case "collapsible":
                     let collapsibleContentHTML = item.content.map(subItem => {
                         switch(subItem.type) {
+                            case "heading":contentHTML += `<h4>${item.value}</h4>`;
                             case "text": return `<p>${subItem.value}</p>`;
                             case "image": return `<img src="${subItem.value}" alt="${subItem.alt}" class="img-${subItem.orientation || 'default'}">`;
                             case "gif": return `<img src="${subItem.value}" alt="${subItem.alt}" class="${subItem.type} ${subItem.orientationClass|| 'default'}">`;
