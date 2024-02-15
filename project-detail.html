@@ -366,7 +366,7 @@ const projects = {
             {
                 type: "link",
                 value: "Download",
-                url: "https://aquwin11.itch.io/leggys-logic",
+                url: "https://aquwin11.itch.io/the-calling",
                 linkType: "text" // Could be "text","icon" or "image" with appropriate handling
             }
         ]
@@ -541,7 +541,142 @@ const projects = {
             {
                 type: "link",
                 value: "Download",
-                url: "https://aquwin11.itch.io/rootopia",
+                url: "https://aquwin11.itch.io/alien",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
+    project6: {
+        title: "The Elemental",
+        img: "Images/elemental.png",
+        tech: ["C#", "Unity"],
+        content: [
+            {
+                type: "text",
+                value: "Elemental is a rogue-lite game created utilizing Procedural Content Generation (PCG) and Dynamic Animation. The game is still in development."
+            },
+            {
+                type: "heading",
+                value: "Procedural Animation"
+            },
+            {
+                type: "text",
+                value: "Given the character encounters various non-flat surfaces due to procedural terrain generation, incorporating procedural animation was crucial to enhance the overall game experience and realism. Accurate foot placement was achieved through inverse kinematics (IK), ensuring realistic positioning. The use of 'OnAnimatorIK,' a built-in Unity function, allows for real-time adjustment of foot animations. This function casts a downward ray from above the foot's IK position and uses 'Physics.Raycast' to detect ground contact. It then adjusts the IK position based on the ray's ground contact. IK rotation handling is also implemented, mirroring foot lifting with foot rotation and using the surface normal at the ray's impact point for realistic foot orientation."
+            },
+            { type: "gif", value: "Images/newwithIKGIF.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "collapsible",
+                value: "Rigging Package",
+                content: [
+                    { type: "text", value: "Using the Unity Rigging Package, I enhanced creature animations, particularly with the 'Two Bone IK Constraint'. This constraint functions like puppet strings, ensuring lifelike limb movements in areas such as the 'arm', 'forearm', and 'hand'. The 'Rig Builder Component', added to the creature's root, forms the foundation for the 'Rig Setup', using targets as guides for animation. The 'Perform Step' method fine-tunes leg joint animations. It continuously evaluates velocity and orchestrates leg motions. These persistent adjustments ensure that the creature's body orientation aligns with realistic movements." },
+                    { type: "gif", value: "Images/enemyMovement.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Player Movement"
+            },
+            {
+                type: "text",
+                value: "Given the game's dynamic build, ensuring the character's mobility was essential. Therefore, the player is equipped with abilities like gliding, dashing, sprinting, and climbing to facilitate exploration. Each serves a unique purpose, aiding exploration and problem-solving. Dashing is a quick burst of speed, while sprinting is sustained. Climbing adds verticality to exploration, and gliding offers an aerial perspective, enhancing the game's sense of freedom and discovery."
+            },
+            { type: "gif", value: "Images/movement.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "collapsible",
+                value: "Player Combat",
+                content: [
+                    { type: "text", value: "Players have the flexibility to tailor their combat approach. They can engage enemies directly, relying on quick reflexes and melee abilities, or opt for a strategic distance combat, utilizing precision aiming. This variety ensures a combat style suitable for every player's preference." },
+                    { type: "gif", value: "Images/combatgif.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Enemy AI"
+            },
+            {
+                type: "text",
+                value: "Similar to the player, the game's AI has both melee and ranged engagement options. The AI uses a state machine, toggling between idle and chase modes based on player proximity. When players near, enemies switch to chase mode, intensifying combat. Enemies deploy both long-range and close combat tactics. They initiate ranged attacks when players enter their shooting radius, but this is regulated by a fire rate to prevent constant firing. Importantly, enemies visually align with players before a ranged attack, signaling players to strategize their defense."
+            },
+            { type: "gif", value: "Images/enemyAI.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "heading",
+                value: "Procedural Terrain Generation"
+            },
+            {
+                type: "text",
+                value: "In procedural terrain generation, noise functions like Perlin noise are crucial in producing natural-looking randomness that represents terrain height. Perlin noise, with its organic gradients, is especially favored for crafting hills and valleys. To add terrain complexity, noise is layered in 'octaves', with each layer building upon the previous. Adjusting each octave's frequency and amplitude allows for terrain variations, from gentle hills to rugged mountains. Frequency determines terrain feature frequency, while amplitude controls their prominence. Overall, noise functions offer the essential randomness for realistic, organically varied terrains in procedural generation."
+            },
+            {
+                type: "collapsible",
+                value: "Falloff Map",
+                content: [
+                    { type: "text", value: "A falloff map crafts island-like landscapes by making the terrain's edges decline, resembling an island encircled by water. It can be generated using designated start and end points or a mathematical formula. This approach is popular in procedural terrain generation for designing standalone islands." },
+                    { type: "gif", value: "Images/falloffGig.gif", alt: "Example", orientation: "potrait"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Terrain Shader",
+                content: [
+                    { type: "text", value: "The terrain shader dynamically applies appropriate textures to the terrain based on its height. By sampling the height values within the terrain, the shader selectively blended between different textures, such as grass, rocks, or sand, to depict realistic landscapes." },
+                    { type: "gif", value: "Images/TerrainShdader.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Placement Generator",
+                content: [
+                    { type: "text", value: "The Placement Generator populates a game scene with diverse objects. It picks random locations based on set criteria, and when a location is deemed suitable, it places an object there, adjusting its rotation and size. This ensures that every game environment it creates is both varied and logically structured." },
+                    { type: "gif", value: "Images/PlacementGeneratorGif.gif", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Day night cycle Shader"
+            },
+            {
+                type: "text",
+                value: "To add to the dynamism and liveliness of the world, a day-night cycle was implemented. This cycle offers an aesthetic change and introduces the following features"
+            },
+            {
+                type: "text",
+                value: "Real-time Transition: The progression from day to night is seamless, with the sun and moon tracking across the sky, casting real-time shadows and creating diverse lighting effects."
+            },
+            {
+                type: "text",
+                value: "Dynamic Lighting: Depending on the time of day, players can experience varying lighting atmospheres. Dawn might be greeted with a soft, warm glow, midday with a bright, clear light, and nighttime with the serene illumination of the moon and stars."
+            },
+            { type: "gif", value: "Images/dayNightGIF.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "heading",
+                value: "User Interface"
+            },
+            {
+                type: "text",
+                value: "I designed the game's user interface (UI) with clarity and user-friendliness in mind. Utilizing the DoTween library, I added dynamic UI animations for a more engaging visual experience. Moreover, I developed custom scripts to ensure consistent behavior across the UI. This setup enabled users to easily adjust audio and game settings to their preference."
+            },
+            { type: "gif", value: "Images/UITransitionGIF.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+            type: "youtube",
+            value: "SiiakDzjFTo?si=X6vsGFApARp5TK1G" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/elemental",
                 linkType: "text" // Could be "text","icon" or "image" with appropriate handling
             }
         ]
