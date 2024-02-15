@@ -41,6 +41,10 @@ const projects = {
                 linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
             },*/
             {
+                type: "text",
+                value: "This game was developed as part of my computer games course for Mobile Application module."
+            },
+            {
                 type: "heading",
                 value: "Design & Features"
             },
@@ -475,10 +479,6 @@ const projects = {
         tech: ["C#", "Unity2D"],
         content: [
             {
-                type: "text",
-                value: "Alien Shooter is an endless space shooter developed in Unity 2D, designed specifically for Android devices."
-            },
-            {
                 type: "heading",
                 value: "Design"
             },
@@ -517,10 +517,13 @@ const projects = {
                 type: "collapsible",
                 value: "Enemies",
                 content: [
+                    { type: "heading", value: "Speedster" },
                     { type: "text", value: " Speedster is a basic enemy type that charges towards your ship at high velocities. Quick reflexes and sharp maneuvers are essential to evade these relentless foes." },
                     { type: "image", value: "Images/Speedster.png", alt: "Example", orientation: "landscape"},
-                    { type: "text", value: " he Artillery Sentinel is armed with a radar system. Upon detecting your ship in its vicinity, it immediately releases a deadly projectile." },
+                    { type: "heading", value: "Artillery Sentinel" },
+                    { type: "text", value: " The Artillery Sentinel is armed with a radar system. Upon detecting your ship in its vicinity, it immediately releases a deadly projectile." },
                     { type: "image", value: "Images/Sentinel.png", alt: "Example", orientation: "landscape"},
+                    { type: "heading", value: "Shielded Cruiser" },
                     { type: "text", value: " Among the most challenging enemies, the Shielded Cruiser boasts a protective shield, making direct ramming tactics futile. " },
                     { type: "image", value: "Images/Shielded.png", alt: "Example", orientation: "landscape"},
                     // Include code snippets, GIFs, videos, etc., as needed
@@ -553,7 +556,7 @@ const projects = {
         content: [
             {
                 type: "text",
-                value: "Elemental is a rogue-lite game created utilizing Procedural Content Generation (PCG) and Dynamic Animation. The game is still in development."
+                value: "Elemental is a rogue-lite game created utilizing Procedural Content Generation (PCG) and Dynamic Animation. The game was developed in Unity for my final  project in university. The game is still in development."
             },
             {
                 type: "heading",
@@ -681,6 +684,110 @@ const projects = {
             }
         ]
     },
+    project7: {
+        title: "Zombie Arena",
+        img: "Images/background.png",
+        tech: ["C++", "SFML"],
+        content: [
+            // Example of a heading
+            /*{
+                type: "link",
+                value: "bi-github",
+                url: "https://www.google.com/",
+                linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
+            },*/
+            {
+                type: "heading",
+                value: "Combat"
+            },
+            {
+                type: "text",
+                value: "In Zombie Arena, players have access to an arsenal of four distinct types of guns to combat the undead hordes: pistols, assault rifles, snipers, and shotguns, each with unique attributes suited to various playstyles and strategies. Ammunition for these firearms is dispersed randomly throughout the game world, introducing an element of unpredictability and scarcity that compels players to continually adapt their weapon use. Additionally, med kits are dropped randomly in the game world whenever zombies are defeated, providing essential health recovery. The scarcity of ammunition forces players to rotate among their available weapons, ensuring a dynamic combat experience that requires thoughtful management of resources."
+            },
+            {
+                
+                type: "gif",
+                value: "Images/ZombieArenaShoot.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },
+            {
+                type: "collapsible",
+                value: "Shooting CODE SNIPPET",
+                content: [
+                    { type: "heading", value: "Shooting" },
+                    { type: "image", value: "Images/check.png", alt: "Example"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Zombies"
+            },
+            {
+                type: "text",
+                value: "In the game, players encounter three distinct types of zombies, each with their unique quirks, adding depth and strategy to the gameplay. The Chaser zombie stands out as the fastest, relentlessly pursuing the player across the battlefield. In contrast, the Bloater acts as a formidable tank, absorbing substantial damage and dealing the most harm to its opponents. The third type, the Crawler, moves at a slower pace and deals the least amount of damage. However, it compensates for its sluggishness with a unique ability to fire projectiles at the player. With each wave, the number of zombies increases, presenting escalating challenges and requiring players to adapt their strategies to survive the growing undead onslaught."
+            },
+            {
+                
+                type: "gif",
+                value: "Images/ZombieArenaEnemy.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },
+            {
+                type: "collapsible",
+                value: "Enemy CODE SNIPPET",
+                content: [
+                    { type: "heading", value: "Enemy" },
+                    { type: "image", value: "Images/za_zombie.png", alt: "Example"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Leveling-Up"
+            },
+            {
+                type: "text",
+                value: "After each wave in Zombie Arena, players are presented with the chance to level up their character, a key feature that deeply influences the game's dynamics and allows for personalized playstyles. This leveling-up process empowers players to strategically enhance their character's abilities or weapon effectiveness, enabling them to decide whether to specialize in a specific combat style or adopt a more balanced approach to survival. The variety of upgrades available ensures that players can adapt and refine their tactics to face the increasing zombie threats more effectively, shaping their journey through the game according to their preferences and playstyle."
+            },
+            {
+                
+                type: "image",
+                value: "Images/levelingup.png",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+            type: "youtube",
+            value: "_fG9-TL_ktk?si=q-MNGKYhdQF9pD_j" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+
+            /*{
+                
+                type: "gif",
+                value: "Images/dayNightGIF.gif",
+                alt: "Animation Highlighting Challenges",
+                orientation: "landscape"
+                orientation: "landscape"
+            },*/
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/zombie-arena",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
     // More projects...
 };
 
@@ -735,7 +842,7 @@ function loadProjectDetails() {
                 case "collapsible":
                     let collapsibleContentHTML = item.content.map(subItem => {
                         switch(subItem.type) {
-                            case "heading":contentHTML += `<h4>${item.value}</h4>`;
+                            case "heading": return `<h4>${subItem.value}</h4>`;
                             case "text": return `<p>${subItem.value}</p>`;
                             case "image": return `<img src="${subItem.value}" alt="${subItem.alt}" class="img-${subItem.orientation || 'default'}">`;
                             case "gif": return `<img src="${subItem.value}" alt="${subItem.alt}" class="${subItem.type} ${subItem.orientationClass|| 'default'}">`;

@@ -21,7 +21,7 @@ body, html {
 header {
     background: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
 }
 .navbar {
@@ -232,15 +232,15 @@ header {
 }
 
 #project-detail-container p {
-    font-size: 17px;
+    font-size: 15px;
     text-align: justify;
     text-justify: inter-word;
 }
 #project-detail-container h4 {
-    font-size: 25px;
+    font-size: 23px;
 }
 #project-detail-container .collapsible h4 {
-    font-size: 22px;
+    font-size: 20px;
 }
 /* collapsible*/
 
