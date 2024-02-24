@@ -580,6 +580,14 @@ const projects = {
             { type: "gif", value: "Images/newwithIKGIF.gif", alt: "Example", orientation: "landscape"},
             {
                 type: "collapsible",
+                value: "Foot IK CODESNIPPET",
+                content: [
+                    { type: "image", value: "Images/newTest.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
                 value: "Rigging Package",
                 content: [
                     { type: "text", value: "Using the Unity Rigging Package, I enhanced creature animations, particularly with the 'Two Bone IK Constraint'. This constraint functions like puppet strings, ensuring lifelike limb movements in areas such as the 'arm', 'forearm', and 'hand'. The 'Rig Builder Component', added to the creature's root, forms the foundation for the 'Rig Setup', using targets as guides for animation. The 'Perform Step' method fine-tunes leg joint animations. It continuously evaluates velocity and orchestrates leg motions. These persistent adjustments ensure that the creature's body orientation aligns with realistic movements." },
@@ -698,7 +706,7 @@ const projects = {
     project7: {
         title: "Zombie Arena",
         img: "Images/background.png",
-        tech: ["C++", "SFML"],
+        tech: ["C++"],
         content: [
             // Example of a heading
             {
@@ -778,15 +786,6 @@ const projects = {
             type: "youtube",
             value: "_fG9-TL_ktk?si=q-MNGKYhdQF9pD_j" // Replace "VideoID" with the actual ID of the YouTube video
             },
-
-            /*{
-                
-                type: "gif",
-                value: "Images/dayNightGIF.gif",
-                alt: "Animation Highlighting Challenges",
-                orientation: "landscape"
-                orientation: "landscape"
-            },*/
             {
                 type: "text",
                 value: "The game's download link is below."
@@ -797,6 +796,24 @@ const projects = {
                 url: "https://aquwin11.itch.io/zombie-arena",
                 linkType: "text" // Could be "text","icon" or "image" with appropriate handling
             }
+        ]
+    },
+    project8: {
+        title: "TWL",
+        img: "Images/TWL.png",
+        tech: ["C++"],
+        content: [
+            // Example of a heading
+            {
+                type: "link",
+                value: "bi-github",
+                url: "https://github.com/Aquwin11/TWL",
+                linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
+            },
+            {
+                type: "text",
+                value: "The development of this game began with a course on Udemy, and I am still working on the game engine and playable character. The main objective of the game is for players to collaborate in solving time-based puzzles."
+            },
         ]
     },
     // More projects...
