@@ -761,4 +761,11 @@ footer {
         font-size: 12px;
     
     }
+    .timeline :nth-child(7){
+        margin-top: 75px;
+
+    }
+    .timeline-inverted .timeline-badge {
+        margin-left: -10px;
+    }
 }
