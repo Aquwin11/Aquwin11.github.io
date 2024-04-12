@@ -690,11 +690,13 @@ footer {
         border-top: 15px solid transparent;
         border-left: 15px solid #F9F7F7;
         border-bottom: 15px solid transparent;
+
     }
     .timeline .timeline-badge {
         top: 0;
         left: 2%;
     }
+
 
     .timeline-inverted > .timeline-panel:before {
         left: -15px; /* Adjust the arrow for inverted items */
@@ -704,6 +706,11 @@ footer {
     }
     .timeline-unverted {
         margin-left: -42px;
+        width:100%;
+    }
+    .timeline :nth-child(7){
+        margin-top: 50px;
+
     }
     .timeline-unverted .timeline-badge {
         margin-left: 24px;
