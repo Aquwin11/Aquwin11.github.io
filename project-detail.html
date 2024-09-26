@@ -799,21 +799,110 @@ const projects = {
         ]
     },
     project8: {
-        title: "TWL",
-        img: "Images/TWL.png",
-        tech: ["C++"],
+        title: "Silent Sky",
+        img: "Images/SilentSkyThumbNail.png",
+        tech: ["Unreal Engine", "Blueprint","Group Project"],
         content: [
             // Example of a heading
             {
                 type: "link",
                 value: "bi-github",
-                url: "https://github.com/Aquwin11/TWL",
+                url: "https://github.com/Aquwin11/BrackeysGameJam2024",
                 linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
             },
             {
                 type: "text",
-                value: "The development of this game began with a course on Udemy, and I am still working on the game engine and playable character. The main objective of the game is for players to collaborate in solving time-based puzzles."
+                value: "The development of this game began during the Brackeys Game Jam 2024, with the theme (Calm Before the Storm). Unfortunately, we missed the submission deadline by just one second. The game was developed by three participants, including myself. The objective of the game is to solve puzzles, obtain results, compare them to previous ones, and predict the weather."
             },
+            {
+                type: "heading",
+                value: "Contribution"
+            },
+            {
+                type: "text",
+                value: "My contributions to the development included creating the functionality for the Main Menu and Pause Menu, as well as all the settings pages. I also developed the temperature puzzle, the satellite viewing puzzle, and the previous weather database. Additionally, I made modifications to the game loop, such as implementing a round system and a timer. I also worked on the game loop for game tutorial section."
+            },
+            {
+                type: "heading",
+                value: "Temperature Puzzle"
+            },
+            { type: "gif", value: "Images/TemperatreGIF.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "text",
+                value: "The player can complete this puzzle by filling in the missing element. Once the puzzle is completed, it provides the players with a value."
+            },
+            {
+                type: "collapsible",
+                value: "Functionality",
+                content: [
+                    { type: "text", value: "The puzzle logic involves an incomplete graph with four missing components layered on top of the main graph. At the beginning of the round, two out of the four missing components are hidden. All missing components are provided to the player as options. When the player drags a missing component onto the main graph, the game checks if it matches the hidden component. If it does, the component becomes visible. Once the player presses the check button, the game verifies whether all missing components are visible; if they are, the puzzel is complete." },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Satellite Viewing Puzzle"
+            },
+            { type: "gif", value: "Images/SatelliteViewing.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "text",
+                value: "The satellite viewing feature allows players to scroll through the map and zoom in and out to check the location of the current storm, enabling them to see if the storm is moving in their direction."
+            },
+            {
+                type: "collapsible",
+                value: "Material Graph",
+                content: [
+                    { type: "text", value: "At the beginning of each round, a new map is loaded. The viewing panel provides players with buttons to scroll and zoom in and out. The scrolling functionality is created by a vector that changes when the respective button is pressed and this parameter is added to the texture coordinate. Similarly, when zooming in and out, a float parameter is multiplied by the texture coordinate, and both outputs are added to the main texture." },
+                    { type: "gif", value: "Images/SV_mat.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "File Cabinet"
+            },
+            { type: "gif", value: "Images/FileCabinetGIF.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "text",
+                value: "The file cabinet feature allows players to check a list of data, which includes temperature, pressure, wind direction, and descriptions. The outputs are detailed in the descriptions."
+            },
+            {
+                type: "collapsible",
+                value: "Blueprint and Data Table",
+                content: [
+                    { type: "text", value: "At the beginning of each round, a random row is picked from the data table and assigned to each of the components. These data table consist of various data type for temperature, pressure, wind and satellite viewing puzzel" },
+                    { type: "gif", value: "Images/FC_DT.png", alt: "Example", orientation: "landscape"},
+                    { type: "text", value: "When the cabnite is clicked multiple widgets are created to for each row, consisting of their file name. When one of the individual files are clicked all the data related to the file is shown." },
+                    { type: "gif", value: "Images/FC_BP.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Menu"
+            },
+            {
+                type: "text",
+                value: "In the settings menu, players can adjust their graphics settings, such as quality and resolution. In the audio settings, we provide options to modify sound levels, including master audio, music audio, and sound effects. Additionally, a small animation was created for the credits section to list all the assets that were used."
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+            type: "youtube",
+            value: "1yMS2uZizY4?si=L-ZH4yM6aFTO1TIl" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://acubestudio.itch.io/silent-sky",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
         ]
     },
     // More projects...
