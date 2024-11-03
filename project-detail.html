@@ -716,6 +716,10 @@ const projects = {
                 linkType: "icon" // Could be "text","icon" or "image" with appropriate handling
             },
             {
+                type: "text",
+                value: "Initially inspired by a tutorial on developing games without an engine, this project evolved into a full-featured horde shooter game. I implemented unique mechanics and added elements like varied weapons, upgrade options, hit effects, and enemy projectiles to enhance gameplay. View the project details and features are mentioned below"
+            },
+            {
                 type: "heading",
                 value: "Combat"
             },
@@ -905,6 +909,135 @@ const projects = {
             }
         ]
     },
+
+    project9: {
+        title: "Food Chain Battle",
+        img: "Images/FoodChainTitle.png",
+        tech: ["Unity", "C#","Group Project"],
+        content: [
+            // Example of a heading
+            {
+                type: "text",
+                value: "As part of a volunteer program with YouLearnt, my team and I were tasked with creating an educational game focused on the science of the food chain. Collaborating with three other members, we completed the project over two and a half months, working in our free time. Initially a team member, I later stepped up as team lead to guide the project to an MVP. My contributions included developing the single-player mode, implementing AI logic, setting up scenes, configuring card prefabs, and coding core game mechanics. I also created animations for card distribution and opponent thinking to enhance gameplay. "
+            },
+            {
+                type: "heading",
+                value: "Play Game(Maximize and Play)"
+            },
+            {type : "iframe", value: "https://itch.io/embed-upload/11431995?color=07ff1e"
+
+            },
+            {
+                type: "heading",
+                value: "About The Game"
+            },
+            {
+                type: "text",
+                value: "The goal is to build food chains and gain points by constructing a successful food chain. The game ends when a player reaches 30 points. The game is played between 2 to 4 players. On your turn, you can place cards or skip your turn. To place a card, click on it, drag it to the table, and release the card. At the start of the game, each player is given 7 cards in hand. A random producer card is placed on the table to begin the game. On their turn, each player must play a card that can eat the last card played on the table (For example, Producer>Animal ...> Apex). Each time a card is played, the round score increases by 1. The round ends when a predator or apex card is played. The game continues until someone reaches 30 points. When a predator card is played, the round score is awarded to the player who played the card. If an apex card is played, the player receives double the round score. Additionally, the longer the food chain built during the round, the bigger the bonus points awarded. "
+            },
+            { type: "gif", value: "Images/FoodChainBattleGameloop.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "collapsible",
+                value: "Card Details",
+                content: [
+                { type: "text", value: "Each card in the game features an animal's name, an image, and a brief description of the creature. In the top-right corner, the card shows its points based on rarity. The background color of the card indicates its rarity." },
+                { type: "text", value: "# Green cards (common) have 4 copies. " },
+                { type: "text", value: "# Blue cards (rare) have 3 copies." },
+                { type: "text", value: "# Purple cards (epic) have 2 copies." },
+                { type: "text", value: "# Gold (legendary) and Red (apex) cards have 1 copy each." },
+                //CardsImage
+                { type: "gif", value: "Images/cardImagesNew.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Cards"
+            },
+            { type: "image", value: "Images/CardScript.png", alt: "Example", orientation: "landscape"},
+            {
+                type: "text",
+                value: "The card prefab consists of three main components: a scriptable object, a UI script, and a movement script. When the card is initialized, the UI script loads the card data from the scriptable object, including generating duplicates of the card based on its rarity. The movement script is enabled only when the card is in the player's hand. Finally, all cards are stored within a single scriptable object to ensure that the game manager has access to all the cards."
+            },
+            { type: "image", value: "Images/cardScriptable.png", alt: "Example", orientation: "landscape"},
+            {
+                type: "collapsible",
+                value: "Card Editor Script",
+                content: [
+                    { type: "text", value: "Additionally, instead of requiring the designer to manually type each card’s name into the Eats and Gets Eaten By lists, I added an editor script. This script provides a dropdown menu that allows the designer to select an animal from a list containing all the animal names in the collection." },
+                    { type: "image", value: "Images/CardEditorScript.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Opponent AI"
+            },
+            {
+                type: "text",
+                value: "The opponent AI checks the previously played card and cross-references it with its current hand to identify an animal that can eat it. Once a suitable animal is found, it is played. Instead of selecting the optimal card, the opponent plays the first playable card, allowing the player to strategize more effectively."
+            },
+            { type: "gif", value: "Images/opponentCardThinking.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "text",
+                value: "The thinking animation for the opponent was implemented using DoTween. A list is created, and the opponent's cards are added to it, starting from the 0 index. Each card sequentially plays the animation, one after the other, continuing for a set duration. Once the animation cycle is complete, all cards return to their original positions."
+            },
+            {
+                type: "collapsible",
+                value: "CODE Snippit",
+                content: [
+                    { type: "text", value: "" },
+                    { type: "image", value: "Images/opponentThinking.png", alt: "Example", orientation: "landscape"},
+                    { type: "image", value: "Images/opponetAIcard.png", alt: "Example", orientation: "landscape"},
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Game Manager and Optimization"
+            },
+            //{ type: "gif", value: "Images/FileCabinetGIF.gif", alt: "Example", orientation: "landscape"},
+            {
+                type: "text",
+                value: "The Game Manager handles various in-game tasks, such as checking the current player's turn, determining if a predator or apex card was played to end the round, and selecting a producer card at the beginning of each round. It also manages card distribution based on the current state of each player's hand."
+            },
+            {
+                type: "text",
+                value: "All the animation for the card was implemented using Dotween library. DoTween was chosen over keyframe animation for its flexibility, allowing precise, code-based control over duration, easing, and chaining, making dynamic and reusable animations easy to implement. It’s also performance-optimized, handling multiple simultaneous animations smoothly, and simplifies complex sequences or loops with cleaner code."
+            },
+            {
+                type: "text",
+                value: "For optimization, a singleton is used for object pooling, with all cards instantiated and set to a parent at the start of the game; object pooling minimizes garbage collection by reusing objects rather than creating and destroying them repeatedly. In single-player mode, no code runs in the Update loop; instead, events and DoTween's OnComplete are used for time-based actions. For file optimization, a sprite atlas and crunch compression reduced most texture sizes from nearly 200MB to 30MB."
+            },
+            {
+                type: "collapsible",
+                value: "Additional",
+                content: [
+                    { type: "text", value: "Additionally, I developed a basic multiplayer game mode using Unity Mirror, which included a multiplayer lobby and in-game functionality; however, it wasn’t included in the final product due to time constraints. I also focused on bug fixing, play testing, cleaning up the Dex page(updated Prefabs and implemented scroll) , and refining the help page to improve user experience." },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+            type: "youtube",
+            value: "1uYI1fQwBCY?si=L-ZH4yM6aFTO1TIl" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+            {
+                type: "text",
+                value: "The game's itch.io link is below."
+            },
+
+            {
+                type: "link",
+                value: "Play",
+                url: "https://aquwin11.itch.io/food-chain-battle",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
     // More projects...
 };
 
@@ -955,7 +1088,14 @@ function loadProjectDetails() {
                         </div>
                     `;
                     break;
-
+                
+                case "iframe":
+                    contentHTML += `
+                        <div class="iframe-container" style="display: flex; justify-content: center; align-items: center; width: 100%; max-width: 750px; margin: 0 auto; padding: 20px;">
+                            <iframe src="${item.value}" allowfullscreen style="width: 100%; height: 500px; border: none;"></iframe>
+                        </div>
+                        `;
+                    break;
                 case "collapsible":
                     let collapsibleContentHTML = item.content.map(subItem => {
                         switch(subItem.type) {
