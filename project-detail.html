@@ -1038,6 +1038,133 @@ const projects = {
             }
         ]
     },
+    project10: {
+        title: "Forklift Simulator",
+        img: "Images/Forklift Image.png",
+        tech: ["Unity", "C#"],
+        content: [
+            // Example of a heading
+            {
+                type: "text",
+                value: "As part of a solo project focused on workplace training, I developed a VR forklift simulator aimed at helping new warehouse employees learn and practice essential forklift safety procedures. Designed in Unity over several weeks, the project was developed without access to a VR headset, using the XR Interaction Toolkit’s simulation mode to emulate VR interactions via mouse and keyboard. The goal was to create a realistic, interactive, and risk-free environment for users to understand forklift operations, safety protocols, and load-handling mechanics."
+            },
+            {
+                type: "heading",
+                value: "About the Simulator"
+            },
+            {
+                type: "text",
+                value: "The training experience was built around three core objectives:"
+            },
+            {type: "text", value:  "* Understand the fundamentals of forklift operation. " },
+            { type: "text", value: "* Practice loading/unloading techniques in a risk-free setting" },
+            { type: "text", value: "* Learn critical safety procedures through guided scenarios" },
+            {
+                type: "text",
+                value: "The simulation introduces players to forklift controls via interactive panels and levers, followed by progressively complex loading challenges that reinforce proper behavior and safety awareness. Visual cues and virtual consequences are used to guide the learner and reinforce correct technique."
+            },
+            {
+                type: "heading",
+                value: "Technical Implementation"
+            },
+            {
+                type: "heading",
+                value: "Forklift Movement"
+            },
+            {
+                type: "text",
+                value: "I developed the forklift movement system using Unity’s physics engine, leveraging Rigidbody and WheelCollider components to simulate realistic vehicle behavior. The goal was to create an accurate and responsive forklift control system suitable for training scenarios. The system supports acceleration, braking, steering, and hydraulic lift operations, all driven by player input. To enhance realism, I incorporated sound feedback and visual wheel rotation, ensuring the simulation feels both functional and immersive."
+            },
+            { type: "gif", value: "Images/Forklift_move.gif", alt: "Example", orientation: "landscape" },
+            {
+                type: "collapsible",
+                value: "CODE Snippit",
+                content: [
+                    { type: "text", value: "The script controls forklift movement using Unity’s WheelCollider physics. In Start(), it initializes the input manager and adjusts the Rigidbody’s center of mass for stability. The Update() method handles vertical movement of the forklift lift by smoothly interpolating its position based on input. In FixedUpdate(), it calculates local speed and, if the ignition is active, applies motor torque or brake torque to the drive wheels depending on acceleration or braking input. It also handles engine sound playback based on movement direction. Wheel meshes are rotated based on velocity to simulate motion, and steering is applied both to WheelCollider.steerAngle and the visual orientation of the front wheels." },
+                    { type: "image", value: "Images/Forklift_move.png", alt: "Example", orientation: "landscape" },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Free Form Leaver Movement"
+            },
+            {
+                type: "text",
+                value: "I developed a free-form lever interaction system using Unity’s physics engine and HingeJoint to simulate realistic mechanical behavior. The lever can be freely grabbed, rotated within defined limits, and smoothly reset to its original position when released. By dynamically attaching and removing the hinge joint at runtime, the lever mimics real-world constraints while allowing flexible interaction. I also integrated directional detection and audio feedback to communicate lever movement to other systems like the InputManager, making it suitable for training simulations and interactive machinery."
+            },
+            { type: "gif", value: "Images/FreeLeaver.gif", alt: "Example", orientation: "landscape" },
+            {
+                type: "collapsible",
+                value: "CODE Snippit",
+                content: [
+                    { type: "text", value: "The script initializes by storing the lever's starting rotation in Start(). When interaction is enabled via SetInteraction(true), it dynamically adds a HingeJoint to the lever object, sets its axis, anchor, and angular limits, and plays a sound. When released, SetInteraction(false) removes the joint, freezes the Rigidbody, and stops movement and audio. In Update(), the lever’s X rotation is continuously monitored and normalized to detect up or down movement; the result is used to update the InputManager. When not interacting, SetToFixLocation() resets the lever’s rotation to its original state using DOLocalRotate from the DOTween library for smooth animation, followed by snapping the transform position/rotation to a known anchor to ensure visual precision." },
+                    { type: "image", value: "Images/SnapLeaver.png", alt: "Example", orientation: "landscape" },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Snap Leaver Movement"
+            },
+            {
+                type: "text",
+                value: "I developed a snap-based lever interaction system similar to the free-form lever mechanism but designed for predefined mechanical positions—ideal for gear shifting or brake toggles. Using Unity’s HingeJoint, the system enables free physical movement within constraints during interaction and then automatically locks into specific positions when the lever collides with snap zones. This approach combines the realism of physics-driven movement with the precision of positional snapping, allowing smooth transitions between states while maintaining control over user inputs like gear levels and brake activation."
+            },
+            { type: "gif", value: "Images/SnapLeaver.gif", alt: "Example", orientation: "landscape" },
+            {
+                type: "collapsible",
+                value: "CODE Snippit",
+                content: [
+                    { type: "text", value: "The LeverSnapController handles the dynamic creation and removal of a HingeJoint to enable constrained lever rotation based on axis, anchor, and min/max limits. The FreeMovementStatus() method sets up the joint and allows full interaction by connecting it to a reference body (anchorPos). When released, RemoveHingJoint() destroys the joint and resets the lever’s position to the anchor. The SetHingeLimits() method allows real-time updates to the joint’s rotation range, optionally triggering a sound effect. The LeverSnapCollider detects collisions between the lever and defined snap zones. On trigger enter, it sets corresponding input values (e.g., gear or brake), snaps the lever’s rotation to match the snap zone, updates hinge limits via SetHingeLimits(), freezes the Rigidbody to lock the lever in place, and ensures precise alignment. This modular setup supports multiple interactive states while maintaining robust physical behavior." },
+                    { type: "image", value: "Images/NewSnapLeaver.png", alt: "Example", orientation: "landscape" },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "UI & Interaction"
+            },
+            {
+                type: "text",
+                value: "Pointer-based UI allowed interaction with panels using simulated XR input. In-world tooltips and interactive displays guided the user step-by-step. UI elements were designed to be intuitive and spatially anchored within the training environment, ensuring users could interact naturally without breaking immersion. Interactive buttons, sliders, and visual feedback (such as highlights and animations) were used to confirm actions and reduce confusion. The layout was optimized for both desktop simulation and future deployment on actual VR headsets, using scalable canvas settings and world-space rendering. Context-sensitive prompts were triggered based on proximity or task progression, ensuring that users received timely guidance throughout the training flow."
+            },
+            { type: "gif", value: "Images/Forklift_UI.gif", alt: "Example", orientation: "landscape" },
+            {
+                type: "heading",
+                value: "Progress Logger"
+            },
+            {
+                type: "text",
+                value: "I implemented a logging system to track user actions, such as completed tasks, collisions, and safety violations, which can be used to evaluate performance or provide feedback. Each interaction and event was time-stamped and categorized, allowing detailed analysis of player behavior during the simulation. This system supported session-based reporting for instructors or evaluators, enabling them to review individual progress and identify areas needing improvement. Additionally, the logs could trigger in-game feedback, such as warnings or corrective tips, to reinforce learning in real-time. The modular design of the logger made it easy to extend with new event types as the training scenarios evolved."
+            },
+            {
+                type: "collapsible",
+                value: "CODE Snippit",
+                content: [
+                    { type: "text", value: "The Action_Logger class is responsible for recording user actions and session data to a persistent text file. At Start(), it initializes the log file path using Application.persistentDataPath and writes a session header, overwriting any previous log data. The LogToAdd() method appends a formatted log entry to an in-memory list, prefixing each action with a timestamp retrieved from PanelScript.GetElapsedTime(). The EndSession() method is called at session termination or on application exit via OnApplicationQuit(). It logs session end markers, including the final session duration from panelScript.GetFinalTime(), and writes all accumulated entries to the log file using File.AppendAllLines(). This structure ensures efficient in-memory logging during runtime and batch writing to disk at session end." },
+                    { type: "image", value: "Images/Sim_Logger.png", alt: "Example", orientation: "landscape" },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Challenges & Solutions"
+            },
+            {
+                type: "text",
+                value: "One key challenge was designing a control scheme that felt natural on both simulated VR and real headsets. I resolved this by abstracting input handling, allowing lever and panel interaction through multiple input methods. Another challenge was simulating accurate forklift physics while avoiding frustration for first-time users, which I mitigated using assisted steering and torque adjustment to support smooth learning curves."
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+                type: "youtube",
+                value: "criJqbFVYtM?si=L-ZH4yM6aFTO1TIl" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+        ]
+    },
     // More projects...
 };
 
