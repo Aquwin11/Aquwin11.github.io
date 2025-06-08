@@ -1165,6 +1165,136 @@ const projects = {
             },
         ]
     },
+    project11: {
+        title: "Crime",
+        img: "Images/Crime Title.png",
+        tech: ["Unreal Engine", "Blueprint", "Group Project"],
+        content: [
+            {
+                type: "text",
+                value: "Crimes is a narrative-driven detective game set in an art gallery, where players solve a theft by gathering clues, interrogating suspects, and piecing together evidence. Developed in Unreal, the game emphasizes non-linear investigation, branching dialogue, and interactive mechanics like different types of interactions and scanning. The game is still under development. Follow this page to stay updated!"
+            },
+            {
+                type: "heading",
+                value: "Core Mechanics"
+            },
+            {
+                type: "heading",
+                value: "Interaction System"
+            },
+            {
+                type: "text",
+                value: "The game's interaction system was built using C# interfaces to create a unified framework for all interactable objects. This architecture ensures consistent behavior while allowing unique functionality for different interaction types. Visual feedback is provided through object highlighting and NPC name tags, making it immediately clear what players can interact with in the environment."
+            },
+            {
+                type: "collapsible",
+                value: "Simple Interaction",
+                content: [
+                    { type: "text", value: "Simple interactions handle basic single-action events like opening doors or picking up items. These use a standardized interface that triggers immediate responses without additional player input, keeping straightforward interactions fluid and intuitive. Some examples are picking up objects, opening door or vents and etc" },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Inspect Mode",
+                content: [
+                    { type: "text", value: "The inspect mechanic allows players to pick up objects and examine them in detail by rotating and zooming in 3D space. This reveals hidden clues like engravings, serial numbers, or forensic evidence that might be invisible at normal scale. Physics-based rotation and configurable zoom constraints create a natural inspection experience similar to modern detective games." },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Readable Objects",
+                content: [
+                    { type: "text", value: "Players can toggle between viewing text directly on in-world objects (like examining a physical note) or in a streamlined UI panel. This dual-view system maintains immersion while ensuring readability - crucial objects like case files use the UI for clarity. These provide critical case information, world-building lore, and optional easter eggs. " },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "NPC Interaction",
+                content: [
+                    { type: "text", value: "NPC conversations use a branching dialogue tree that evolves based on collected clues and previous interactions. We will in-depth into this mechanism in the Dialouge System section" },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Advanced Interactions",
+                content: [
+                    { type: "text", value: "Complex interactions like using computers or solving keypad puzzles temporarily disable regular movement and switch to specialized controls. The camera smoothly transitions to a focused view of the interactive object, creating an immersive hands-on feel. These sequences often incorporate multi-step puzzles that integrate with the detective gameplay loop." },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "collapsible",
+                value: "Scanning & Detective Vision",
+                content: [
+                    { type: "text", value: "The scanning system reveals hidden forensic evidence that normal interaction cannot detect, such as bloodstains, footprints, or tampered security systems. When activated, Detective Vision highlights these clues with a visual filter, making them glow or display particle effects for clear identification. This mechanic creates layered investigation - some clues require scanning to progress, while others provide optional supporting evidence." },
+                    // Include code snippets, GIFs, videos, etc., as needed
+                ]
+            },
+            {
+                type: "heading",
+                value: "Dialogue System"
+            },
+            {
+                type: "text",
+                value: "The game's dynamic dialogue system enables multi-phase conversations where NPCs progressively reveal information based on the player's discovered clues, locking specific questions until supporting evidence is found. Players can backtrack through dialogue trees to revisit previous exchanges while NPCs remember past conversations, reacting to contradictions that may generate new clues. The system organically integrates with investigation mechanics - crucial evidence and inventory items can be obtained through careful interrogation, and each conversation evolves through distinct narrative stages from initial introductions to eventual confrontations. Creating a seamless connection between exploration and interrogation that drives both story progression and puzzle-solving."
+            },
+
+            {
+                type: "heading",
+                value: "Clues & Inventory System"
+            },
+            {
+                type: "text",
+                value: "The game’s investigation follows an organic guidance design while fully non-linear, environmental storytelling and logical clue placement naturally steer players toward key discoveries without explicit waypoints. Physical items (keys, tools) unlock spatial progression, while abstract clues (documents, forensic scans) reveal narrative-critical information, with both systems feeding into a unified inventory that tracks case progress. Subtle design techniques create intuitive flow: high-visibility objects hint at interactivity, early areas contain self-contained puzzle chains to establish mechanics, and environmental density ensures players encounter progression-critical items through natural exploration. Clues dynamically update the detective’s notebook, highlighting connections between disparate discoveries to reinforce case theories."
+            },
+            {
+                type: "heading",
+                value: "Game Flow"
+            },
+            {
+                type: "text",
+                value: "Setting: The entire investigation unfolds within an art gallery, where three suspects the  Guard, Guide, and Administrator."
+            },
+            {
+                type: "text",
+                value: "Opening Briefing: A detective introduces the theft, explains gameplay mechanics, and tasks players with identifying the culprit, motive, and crime method."
+            },
+            {
+                type: "text",
+                value: "Open Investigation: Players freely explore key areas, gathering clues via scanning, dialogue, and puzzles while unlocking new interrogation options through evidence discovery."
+            },
+            {
+                type: "text",
+                value: "Final Deduction: Players confront the detective, accusing a suspect while justifying their motive and method to solve the case."
+            },
+            {
+                type: "text",
+                value: "Outcomes: Correct accusations trigger confessions; errors yield case failures, with the detective pinpointing logical flaws in the player’s reasoning."
+            },
+            {
+                type: "heading",
+                value: "Game Video"
+            },
+            {
+                type: "youtube",
+                value: "iW-u-uKC4gk?si=X6vsGFApARp5TK1G" // Replace "VideoID" with the actual ID of the YouTube video
+            },
+            {
+                type: "text",
+                value: "The game's download link is below."
+            },
+            {
+                type: "link",
+                value: "Download",
+                url: "https://aquwin11.itch.io/elemental",
+                linkType: "text" // Could be "text","icon" or "image" with appropriate handling
+            }
+        ]
+    },
     // More projects...
 };
 
